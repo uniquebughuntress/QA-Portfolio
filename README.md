@@ -34,7 +34,7 @@ Erledigte Aufgaben sind verlinkt, kommende werden nach und nach ergänzt.
 
 | Woche | Thema | Status | Hausaufgabe / Artefakt |
 |-------|-------|--------|------------------------|
-| 5 | PyTest Grundlagen | 🚧 | [PyTest Übungen] – *in Arbeit* |
+| 5 | PyTest Grundlagen |  ✅ | [PyTest Übung](https://github.com/uniquebughuntress/QA-Portfolio/tree/main/Testautomatisierung/HW1_PyTest)|
 | 6 | Selenium + PyTest | 🚧 |[Erste automatisierte Tests] – *in Arbeit* |
 | 7 | XPath Strategien | ⏳ | [XPath Übungen] – *folgt* |
 | 8 | **Projekt: Testautomatisierung** |⏳| [End-to-End Testsuite] – *folgt* |
@@ -75,8 +75,7 @@ uniquebughuntress-qa-portfolio/
 │ └── Äquivalenzklassen_und_Grenzwertanalyse.md # EP + BVA Dokumentation
 │
 ├── Testautomatisierung/
-│ └── test-code.py # Pytest + Selenium Test-Suite
-│
+│ └── HW1_PyTest
 ├── .gitignore
 └── README.md
 
@@ -99,5 +98,5 @@ Du erreichst mich hier auf GitHub – oder über [dein bevorzugtes Medium, z. 
 
 ---
 
-*Letzte Aktualisierung: 08.06.2026*  
+*Letzte Aktualisierung: 12.06.2026*  
 *– Always learning, always hunting bugs.*
