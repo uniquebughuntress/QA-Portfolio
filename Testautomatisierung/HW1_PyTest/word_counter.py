@@ -1,7 +1,7 @@
 # word_counter.py.py
 # Erstellt: 11.06.26 um 11:25
 # Autor: natalya
-# Projekt: Testautomatisierung
+# Projekt: QA-Portfolio
 
 
 def count_word_matches(text, target):

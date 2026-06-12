@@ -1,7 +1,7 @@
 # test_invalid_inputs.py
 # Erstellt: 11.06.26 um 11:31
 # Autor: natalya
-# Projekt: Testautomatisierung
+# Projekt: QA-Portfolio
 
 
 '''

@@ -1,7 +1,7 @@
 # test_basic_parametrized.py
 # Erstellt: 11.06.26 um 11:30
 # Autor: natalya
-# Projekt: Testautomatisierung
+# Projekt: QA-Portfolio
 
 
 '''
