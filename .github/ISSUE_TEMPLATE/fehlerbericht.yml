@@ -1,0 +1,110 @@
+name: 🐞 Fehlerbericht
+description: Einen Fehler im Grocery Mate WebShop melden – JIRA Style
+title: "[Bug]: "
+labels: ["bug", "needs-triage"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🐞 Fehlerbericht – Grocery Mate WebShop
+        Bitte alle Felder vollständig ausfüllen.
+
+  - type: input
+    id: title
+    attributes:
+      label: Titel
+      description: Kurze, aussagekräftige Zusammenfassung des Fehlers
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priorität
+      options:
+        - 🔴 Critical (Kernfunktionalität kaputt / Sicherheitsproblem)
+        - 🟠 Medium (Feature teilweise nutzbar / Datenschutzproblem)
+        - 🟡 Low (Kosmetischer / UX-Fehler)
+    validations:
+      required: true
+
+  - type: input
+    id: reporter
+    attributes:
+      label: Melder
+      description: Dein vollständiger Name
+    validations:
+      required: true
+
+  - type: input
+    id: testuser
+    attributes:
+      label: Testnutzer (falls zutreffend)
+      description: E-Mail und Passwort
+      placeholder: "E-Mail: test1@test.de / Passwort: AdminTest!"
+
+  - type: input
+    id: date
+    attributes:
+      label: Datum
+      description: YYYY-MM-DD
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Testumgebung
+      description: Browser, Betriebssystem, Anwendung
+      value: |
+        - **Anwendung:** Grocery Mate WebShop
+        - **Seite:** 
+        - **Browser:** Chrome 128.0.6613.138 / Firefox 151.0.2 / Brave 1.90.128
+        - **Betriebssystem:** Windows 11 / macOS 15.4 / Android 16
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Beschreibung
+      description: Was ist das Problem?
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Schritte zur Reproduktion
+      description: Nummerierte Schritte
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Erwartetes Ergebnis
+      description: Was sollte passieren? (laut Anforderung)
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Tatsächliches Ergebnis
+      description: Was passiert tatsächlich?
+    validations:
+      required: true
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots / Anhänge
+      description: Screenshots hier reinziehen oder Links einfügen
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Zusätzliche Informationen
+      description: Vermutete Ursache, Geschäftsrisiko, betroffene Testfälle usw.

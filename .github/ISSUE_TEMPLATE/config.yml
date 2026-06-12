@@ -1,0 +1,6 @@
+blank_issues_enabled: true
+
+contact_links:
+  - name: 📋 Vollständiger Bug-Report – Pflichtfelder
+    url: https://github.com/dein-repo/blob/main/.github/ISSUE_TEMPLATE/bug_report.yml
+    about: Bitte alle Felder ausfüllen: Priorität, Reproduktionsschritte, erwartetes vs. tatsächliches Ergebnis

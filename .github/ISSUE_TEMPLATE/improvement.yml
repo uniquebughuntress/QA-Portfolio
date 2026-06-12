@@ -1,0 +1,84 @@
+name: 💡 Improvement Suggestion
+description: Submit an improvement suggestion for the Grocery Mate WebShop
+title: "[Improvement]: "
+labels: ["enhancement", "needs-triage"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 💡 Improvement Suggestion – Grocery Mate WebShop
+        Please fill out all fields completely.
+        
+        **Note:** Improvement suggestions are not bug reports. They describe what could be better – not what is broken.
+
+  - type: input
+    id: title
+    attributes:
+      label: Title
+      description: Short, meaningful summary of the improvement suggestion
+    validations:
+      required: true
+
+  - type: input
+    id: reporter
+    attributes:
+      label: Reporter
+      description: Your full name
+    validations:
+      required: true
+
+  - type: input
+    id: date
+    attributes:
+      label: Date
+      description: YYYY-MM-DD
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Affected Areas
+      description: Which page / feature does this suggestion affect?
+      value: |
+        - **Application:** Grocery Mate WebShop
+        - **Page / Area:** 
+        - **Browser:** Chrome 128.0.6613.138 / Firefox 151.0.2 / Brave 1.90.128 (if relevant)
+        - **Operating System:** Windows 11 / macOS 15.4 / Android 16 (if relevant)
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description of the Improvement
+      description: What is the current state? What do you suggest?
+    validations:
+      required: true
+
+  - type: textarea
+    id: benefit
+    attributes:
+      label: Expected Benefit
+      description: What value would this improvement bring to users or the shop?
+    validations:
+      required: true
+
+  - type: textarea
+    id: recommendation
+    attributes:
+      label: Concrete Recommendation (optional)
+      description: How could the improvement be implemented technically or visually?
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots / Attachments (optional)
+      description: Sketches, mockups, or examples from other shops
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        **Note:** The decision on improvement suggestions is made by the Product Owner. As QA, I document the idea – the team decides on implementation.
