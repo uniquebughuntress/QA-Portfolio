@@ -11,10 +11,10 @@ Deine Aufgabe ist es, die folgenden Aktionen auf einer Demo-E-Commerce-Website z
 
 1. **Login-Automatisierung**
     Automatisiere den Login-Prozess für die Website mit den bereitgestellten Testzugangsdaten.
-    
+
 2. **Produkt-Such-Verifikation**
     Navigiere nach dem Login zur Produktseite und überprüfe das Vorhandensein bestimmter Produktnamen.
-    
+
 
 ---
 
@@ -30,7 +30,6 @@ Deine Aufgabe ist es, die folgenden Aktionen auf einer Demo-E-Commerce-Website z
         - Produktname: **"Sauce Labs Backpack"**.
     - Stelle sicher (assert), dass der Produktname auf der Seite angezeigt wird.
 """
-# test_task1_basic_login.py
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -57,7 +56,7 @@ def test_basic_login():
         # Produkt suchen
         backpack = driver.find_element(
             By.XPATH,
-            '//div[@data-test="inventory-item-name" and text()="Sauce Labs Backpack"]'
+            '//div[@data-test="inventory-item-name" and text()="Sauce Labs Backpack"]',
         )
 
         # Verifikation
