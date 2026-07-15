@@ -4,14 +4,13 @@
 # Projekt: QA-Portfolio
 
 
-'''
-### Übung 3: Negativtests (Negative Testing)
+"""
+Negativtests für die Funktion ``count_word_matches``.
 
-Teste die Funktion auf ungültige Eingaben wie `None`, Ganzzahlen oder Listen,
-um sicherzustellen, dass sie die entsprechenden Ausnahmen (Exceptions) auslöst.
-
-Verwende ein Fixture, um Testfälle für ungültige Eingaben bereitzustellen.
-'''
+Die Tests verwenden ein Fixture mit ungültigen Eingaben und überprüfen,
+ob die Funktion entweder ``0`` zurückgibt oder die erwartete Exception
+auslöst.
+"""
 
 import pytest
 from HW1_PyTest.word_counter import count_word_matches
@@ -19,25 +18,23 @@ from HW1_PyTest.word_counter import count_word_matches
 
 @pytest.fixture
 def invalid_inputs():
-    """Liefert ungültige Eingaben als Liste von (text, target, expected_exception_or_value)."""
+    """Liefert ungültige Eingaben als Liste von Testfällen."""
     return [
-            (None, "word", None),  # text=None  → erwartet 0
-            ("hello world", None, None),  # target=None → erwartet 0
-            (123, "word", AttributeError),  # text als int
-            ("hello world", 456, AttributeError),  # target als int
-            (["hello", "world"], "world", AttributeError),  # text als Liste
-            ("hello world", ["world"], AttributeError),  # target als Liste
-            ]
+        (None, "word", 0),
+        ("hello world", None, 0),
+        (123, "word", AttributeError),
+        ("hello world", 456, AttributeError),
+        (["hello", "world"], "world", AttributeError),
+        ("hello world", ["world"], AttributeError),
+    ]
 
 
-@pytest.mark.parametrize("index", range(6))
-def test_count_word_matches_invalid_inputs(invalid_inputs, index):
-    text, target, expectation = invalid_inputs[index]
-    
-    if expectation is None:
-        # None-Eingaben: Funktion soll 0 zurückgeben
-        assert count_word_matches(text, target) == 0
-    else:
-        # Ungültige Typen: Funktion soll AttributeError auslösen
-        with pytest.raises(expectation):
-            count_word_matches(text, target)
+def test_count_word_matches_invalid_inputs(invalid_inputs):
+    """Testet das Verhalten bei ungültigen Eingaben."""
+
+    for text, target, expectation in invalid_inputs:
+        if expectation == 0:
+            assert count_word_matches(text, target) == 0
+        else:
+            with pytest.raises(expectation):
+                count_word_matches(text, target)
