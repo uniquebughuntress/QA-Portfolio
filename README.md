@@ -35,8 +35,8 @@ Erledigte Aufgaben sind verlinkt, kommende werden nach und nach ergänzt.
 | Woche | Thema | Status | Hausaufgabe / Artefakt |
 |-------|-------|--------|------------------------|
 | 5 | PyTest Grundlagen |  ✅ | [PyTest Übung](https://github.com/uniquebughuntress/QA-Portfolio/tree/main/Testautomatisierung/HW1_PyTest)|
-| 6 | Selenium + PyTest | 🚧 |[Erste automatisierte Tests] – *in Arbeit* |
-| 7 | XPath Strategien | ⏳ | [XPath Übungen] – *folgt* |
+| 6 | Selenium + PyTest | ✅ |[Erste automatisierten Tests](https://github.com/uniquebughuntress/QA-Portfolio/tree/main/Testautomatisierung/HW2_Selenium) |
+| 7 | XPath Strategien | ✅ | [XPath Übungen](https://github.com/uniquebughuntress/QA-Portfolio/tree/main/Testautomatisierung/HW3_XPath)|
 | 8 | **Projekt: Testautomatisierung** |⏳| [End-to-End Testsuite] – *folgt* |
 
 > **Getestete Anwendung:** [Grocery Market Mate WebShop](https://grocerymate.masterschool.com/store)
@@ -76,6 +76,9 @@ uniquebughuntress-qa-portfolio/
 │
 ├── Testautomatisierung/
 │ └── HW1_PyTest
+│ └── HW2_Selenium + PyTest
+│ └── HW3_XPath
+│ └── HW4_POM_GroceryMate
 ├── .gitignore
 └── README.md
 
@@ -98,5 +101,5 @@ Du erreichst mich hier auf GitHub – oder über [dein bevorzugtes Medium, z. 
 
 ---
 
-*Letzte Aktualisierung: 12.06.2026*  
+*Letzte Aktualisierung: 16.07.2026*  
 *– Always learning, always hunting bugs.*
