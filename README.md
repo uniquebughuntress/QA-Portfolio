@@ -1,232 +1,65 @@
 # 🐛 uniquebughuntress – QA Portfolio
 
-> *Building software quality through structured testing, automation and continuous learning.*
+[![GitHub](https://img.shields.io/badge/GitHub-uniquebughuntress-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/uniquebughuntress)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Natalya%20Schwarz-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/uniquebughuntress/)
 
-Welcome to my public **Quality Assurance Portfolio**.
-
-My name is **Natalya**, also known as **uniquebughuntress**.
-
-This repository documents my practical work in **Software Testing**, **Quality Assurance**, and **Test Automation** while continuously evolving into a reusable **QA Knowledge Base**.
-
-Rather than collecting homework assignments, my goal is to build a structured portfolio that demonstrates how I approach software quality—from requirement analysis and manual testing to maintainable automated UI tests.
+> *Building software quality through structured testing, thoughtful automation and continuous learning.*
 
 ---
 
-# 👩‍💻 About Me
+## 👋 About
 
-I am currently completing a **Software Engineering Bootcamp** with a specialization in **Quality Assurance**.
+Hi, I'm **Natalya** (*uniquebughuntress*).
 
-My focus is on building reliable, maintainable and well-documented test automation solutions while continuously expanding my knowledge of software testing methodologies and QA best practices.
+This repository showcases my journey into **Quality Assurance** and **Test Automation** through practical projects, structured documentation and reusable QA resources.
 
-I enjoy analyzing applications, identifying edge cases, improving test coverage and transforming testing knowledge into reusable documentation.
-
----
-
-# 🎯 Portfolio Goals
-
-This repository focuses on:
-
-- Software Testing fundamentals (STLC)
-- Requirement Analysis
-- Test Planning & Test Design
-- Manual Testing
-- Test Automation
-- Maintainable Test Architecture
-- Continuous Learning
-- QA Knowledge Base
-- Interview Preparation
+My focus is on building reliable, maintainable test automation while continuously improving my software testing skills.
 
 ---
 
-# 🛠 Tech Stack
+## 🛠 Tech Stack
 
-### Languages
-
-- Python
-
-### Test Automation
-
-- PyTest
-- Selenium WebDriver
-
-### Web Technologies
-
-- HTML
-- CSS
-- XPath
-
-### Tools
-
-- Git
-- GitHub
-- PyCharm
-- Firefox Developer Edition
-- Chrome
-
-### Currently Learning
-
-- Page Object Model (POM)
-- Advanced Selenium
-- Test Automation Architecture
+- **Language:** Python
+- **Frameworks:** PyTest, Selenium WebDriver
+- **Web:** HTML, CSS, XPath
+- **Tools:** Git, GitHub, PyCharm, Firefox Developer Edition, Chrome
 
 ---
 
-# 📚 Repository Structure
+## 📂 Repository
 
-```
+```text
 QA-Portfolio/
-
+│
 ├── STLC/
-│   ├── Requirement Analysis
-│   ├── Test Planning
-│   ├── Test Design
-│   ├── Test Execution
-│   └── Test Reporting
-│
 ├── PyTest_Fundamentals/
-│   ├── README
-│   ├── Cheatsheet
-│   ├── Interview Questions
-│   └── Practical Exercises
-│
 ├── XPath_Strategies/
-│   ├── README
-│   ├── Exercises
-│   ├── Best Practices
-│   ├── Cheatsheet
-│   └── Interview Questions
-│
 ├── Selenium_Web_Automation/
-│   ├── AutomationExercise
-│   ├── SauceDemo
-│   ├── Browser Setup
-│   ├── Cheatsheet
-│   ├── Locator Guide
-│   ├── Wait Strategies
-│   └── Interview Questions
-│
 ├── POM_GroceryMate/
-│
 └── .github/
 ```
 
 ---
 
-# 📖 QA Knowledge Base
+## 🚀 Current Progress
 
-The repository is organized into learning modules that combine theory with practical implementation.
+✅ Software Testing (STLC)
 
-Each module contains structured documentation, practical exercises and reusable reference material.
+✅ PyTest Fundamentals
 
-Depending on the topic, modules include:
+✅ XPath Strategies
 
-- README
-- Practical Exercises
-- Cheatsheets
-- Best Practices
-- Interview Questions
-- Working Python Code
-- Selenium Examples
+✅ Selenium Web Automation
 
-The goal is to create a long-term knowledge base that can be used for learning, revision and interview preparation.
+🚧 Page Object Model (POM)
 
 ---
 
-# 🚀 Current Progress
+## 💡 Philosophy
 
-## ✅ Software Testing (STLC)
+> **Quality is more than finding bugs.**
 
-- Requirement Analysis
-- Test Planning
-- Test Case Design
-- Test Execution
-- Test Reporting
-- Equivalence Partitioning
-- Boundary Value Analysis
-- Decision Table Testing
-- State Transition Testing
-
----
-
-## ✅ PyTest Fundamentals
-
-- Assertions
-- Fixtures
-- Parametrization
-- Edge Cases
-- Exception Testing
-
----
-
-## ✅ XPath Strategies
-
-- Relative XPath
-- XPath Functions
-- XPath Axes
-- Locator Strategies
-- Best Practices
-
----
-
-## ✅ Selenium Web Automation
-
-- Selenium WebDriver
-- Browser Automation
-- Explicit Waits
-- Page Navigation
-- Form Automation
-- Registration Workflow
-- Stable Locator Strategies
-
----
-
-## 🚧 Currently Working On
-
-**Page Object Model (POM)**
-
-Building a maintainable Selenium framework based on the Page Object Model design pattern.
-
----
-
-# 🐞 Bug Reports
-
-Discovered issues are documented as GitHub Issues whenever appropriate, including:
-
-- Environment
-- Steps to Reproduce
-- Expected Result
-- Actual Result
-- Severity
-- Additional Notes
-
-➡️ **GitHub Issues**
-
----
-
-# 💡 Philosophy
-
-> Quality is more than finding bugs.
-
-Good Quality Assurance means understanding requirements, asking the right questions, designing meaningful test cases, building maintainable automation and continuously improving software quality.
-
-This portfolio reflects that mindset.
-
----
-
-# 🤝 Connect
-
-Feedback, suggestions and professional exchange are always welcome.
-
-- GitHub: **uniquebughuntress**
-- [![LinkedIn](https://img.shields.io/badge/LinkedIn-Natalya%20Schwarz-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/uniquebughuntress/)
-
----
-
-# 📌 Repository Status
-
-This repository is continuously updated as I progress through my QA journey.
-
-New modules, projects and documentation are added regularly.
+I believe good QA starts with understanding requirements, designing meaningful test cases and building maintainable automation that supports long-term software quality.
 
 ---
 
