@@ -1,6 +1,4 @@
-# XPath – Hausaufgabe 1
-
-## Aufgabe 1
+# XPath
 
 ### 1. Schreibe das XPath, um das Haupt-**h1**-Element zu finden.
 

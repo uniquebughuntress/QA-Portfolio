@@ -1,4 +1,4 @@
-# word_counter.py.py
+# word_counter.py
 # Erstellt: 11.06.26 um 11:25
 # Autor: natalya
 # Projekt: QA-Portfolio
@@ -19,11 +19,11 @@ def count_word_matches(text, target):
     """
     if not text or not target:
         return 0
-    
+
     # Text in Wörter aufteilen und für case-insensitive Vergleich in Kleinbuchstaben
     # umwandeln
     words = text.lower().split()
     target = target.lower()
-    
+
     # Eigenständige Vorkommen des Zielwortes zählen
     return words.count(target)

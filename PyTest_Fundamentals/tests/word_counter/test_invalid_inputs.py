@@ -13,7 +13,7 @@ auslöst.
 """
 
 import pytest
-from HW1_PyTest.word_counter import count_word_matches
+from PyTest_Fundamentals.source.word_counter import count_word_matches
 
 
 @pytest.fixture

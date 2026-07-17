@@ -1,6 +1,4 @@
-# XPath – Hausaufgabe 1
-
-## Aufgabe 2
+# XPath
 
 ### 1. Schreibe das XPath für das im Bild hervorgehobene Symbol/den hervorgehobenen Button.
 
