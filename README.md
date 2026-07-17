@@ -1,105 +1,233 @@
-# 🐛 uniquebughuntress – QA Learning Portfolio
+# 🐛 uniquebughuntress – QA Portfolio
 
-*„Bug hunting with structure and heart.“*
+> *Building software quality through structured testing, automation and continuous learning.*
 
-Willkommen in meinem öffentlichen Lernportfolio.  
-Ich bin **uniquebughuntress** und dokumentiere hier meinen Weg durch das **Software Engineering Bootcamp** – mit vollem Fokus auf **Quality Assurance (QA)** und **Testautomatisierung**.
+Welcome to my public **Quality Assurance Portfolio**.
 
-Ziel ist es, Theorie und Praxis zu verbinden:  
-Von der Anforderungsanalyse über manuelle Testfälle bis hin zur automatisierten Testsuite mit Python, PyTest & Selenium.
+My name is **Natalya**, also known as **uniquebughuntress**.
 
----
+This repository documents my practical work in **Software Testing**, **Quality Assurance**, and **Test Automation** while continuously evolving into a reusable **QA Knowledge Base**.
 
-## 📚 Lernplan (basierend auf Bootcamp & Udemy)
-
-Die folgende Tabelle zeigt meinen Fortschritt durch die Kursinhalte.  
-Erledigte Aufgaben sind verlinkt, kommende werden nach und nach ergänzt.
-
-### TEIL 1 – GRUNDLAGEN DES TESTENS (STLC)
-
-| Woche | Thema | Status | Hausaufgabe / Artefakt |
-|-------|-------|--------|------------------------|
-| 1.1 | Udemy Abschnitte 1–3 | ✅ | [Mock-up Test Session 1] – *folgt* |
-| 1.2 | Udemy Abschnitt 4 | ✅ | [Mock-up Test Session 2] – *folgt* |
-| 2.1 | Tests aus Sitzung 1 & 2 | ✅ | [Dokumentation der Tests] – *folgt* |
-| 2.2 | Äquivalenzklassen & Grenzwertanalyse | ✅ | [Aufgabe EP & BVA](https://github.com/uniquebughuntress/QA-Portfolio/blob/main/STLC/%C3%84quivalenzklassen_und_Grenzwertanalyse.md) |
-| 2.2 | Entscheidungstabellentest | ✅ | [Aufgabe Entscheidungstabelle](https://github.com/uniquebughuntress/QA-Portfolio/blob/main/STLC/Entscheidungstabellentest.md) |
-| 3.1 | Zustandsübergangstest | ✅ | [Aufgabe Zustandsübergangstest](https://github.com/uniquebughuntress/QA-Portfolio/blob/main/STLC/Zustandsuebergangstest.md) |
-| 3.2 | Anforderungen verstehen & präzisieren | ✅ | [Anforderungsanalyse Grocery Mate](https://github.com/uniquebughuntress/QA-Portfolio/blob/main/STLC/Anforderungsanalyse_v2.md) |
-| 3.2 | Portfolio-Einrichtung | ✅ | Dieses Repository |
-| 4.1 | Testplan & Testfallentwurf | ✅ | [Testplan](https://github.com/uniquebughuntress/QA-Portfolio/blob/main/STLC/Testplan_v2.md) und [Testfalldesign](https://github.com/uniquebughuntress/QA-Portfolio/blob/main/STLC/Testfallentwurf_Test-Case-Design_v2.md)|
-| 4.2 | Testdurchführungsdokumentation & Testberichterstattung | ✅ | [Testdurchführung](https://github.com/uniquebughuntress/QA-Portfolio/blob/main/STLC/Testdurchführungsdokumentation.md) und [Testbericht](https://github.com/uniquebughuntress/QA-Portfolio/blob/main/STLC/Testberichterstattung_Test-Reporting.md)|
-
-### TEIL 2 – TESTAUTOMATISIERUNG
-
-| Woche | Thema | Status | Hausaufgabe / Artefakt |
-|-------|-------|--------|------------------------|
-| 5 | PyTest Grundlagen |  ✅ | [PyTest Übung](https://github.com/uniquebughuntress/QA-Portfolio/tree/main/Testautomatisierung/HW1_PyTest)|
-| 6 | Selenium + PyTest | ✅ |[Erste automatisierten Tests](https://github.com/uniquebughuntress/QA-Portfolio/tree/main/Testautomatisierung/HW2_Selenium) |
-| 7 | XPath Strategien | ✅ | [XPath Übungen](https://github.com/uniquebughuntress/QA-Portfolio/tree/main/Testautomatisierung/HW3_XPath)|
-| 8 | **Projekt: Testautomatisierung** |⏳| [End-to-End Testsuite] – *folgt* |
-
-> **Getestete Anwendung:** [Grocery Market Mate WebShop](https://grocerymate.masterschool.com/store)
+Rather than collecting homework assignments, my goal is to build a structured portfolio that demonstrates how I approach software quality—from requirement analysis and manual testing to maintainable automated UI tests.
 
 ---
 
+# 👩‍💻 About Me
 
-## 📂 Repository-Struktur
-```
-uniquebughuntress-qa-portfolio/
-│
-├── .github/ # GitHub Issue Templates
-│ └── ISSUE_TEMPLATE/
-│ ├── bug_report.md # Bug-Ticket (Englisch/Markdown)
-│ ├── bug_report.yml # Bug-Ticket (Englisch/YAML-Formular)
-│ ├── config.yml # Keine leeren Issues erlaubt
-│ ├── fehlerbericht.md # Bug-Ticket (Deutsch/Markdown)
-│ ├── fehlerbericht.yml # Bug-Ticket (Deutsch/YAML-Formular)
-│ ├── improvement.md # Verbesserungsvorschlag (Englisch/Markdown)
-│ ├── improvement.yml # Verbesserungsvorschlag (Englisch/YAML)
-│ ├── verbesserungsvorschlag.md # Verbesserungsvorschlag (Deutsch/Markdown)
-│ └── verbesserungsvorschlag.yml # Verbesserungsvorschlag (Deutsch/YAML)
-│
-├── STLC/ # Software Testing Life Cycle Dokumentation
-│ ├── Anforderungsanalyse.md # Ursprüngliche Anforderungen
-│ ├── Anforderungsanalyse_v2.md # Anforderungen IST-Zustand + Nice-to-Have
-│ ├── Einrichtung-Test-Umgebung.md # Testumgebung & Tools
-│ ├── Entscheidungstabellentest.md # Decision Table Testing
-│ ├── Testberichterstattung_Test-Reporting.md # Finaler Testbericht
-│ ├── Testdurchführungsdokumentation.md # Test Execution Dokumentation
-│ ├── Testfallentwurf_Test-Case-Design.md # Ursprünglicher Testfallentwurf
-│ ├── Testfallentwurf_Test-Case-Design_v2.md # Finaler Testfallentwurf (17+ Testfälle)
-│ ├── Testplan.md # Ursprünglicher Testplan
-│ ├── Testplan_v2.md # Finaler Testplan
-│ ├── Zustandsuebergangstest.md # State Transition Testing (ATM)
-│ └── Äquivalenzklassen_und_Grenzwertanalyse.md # EP + BVA Dokumentation
-│
-├── Testautomatisierung/
-│ └── HW1_PyTest
-│ └── HW2_Selenium + PyTest
-│ └── HW3_XPath
-│ └── HW4_POM_GroceryMate
-├── .gitignore
-└── README.md
+I am currently completing a **Software Engineering Bootcamp** with a specialization in **Quality Assurance**.
+
+My focus is on building reliable, maintainable and well-documented test automation solutions while continuously expanding my knowledge of software testing methodologies and QA best practices.
+
+I enjoy analyzing applications, identifying edge cases, improving test coverage and transforming testing knowledge into reusable documentation.
+
+---
+
+# 🎯 Portfolio Goals
+
+This repository focuses on:
+
+- Software Testing fundamentals (STLC)
+- Requirement Analysis
+- Test Planning & Test Design
+- Manual Testing
+- Test Automation
+- Maintainable Test Architecture
+- Continuous Learning
+- QA Knowledge Base
+- Interview Preparation
+
+---
+
+# 🛠 Tech Stack
+
+### Languages
+
+- Python
+
+### Test Automation
+
+- PyTest
+- Selenium WebDriver
+
+### Web Technologies
+
+- HTML
+- CSS
+- XPath
+
+### Tools
+
+- Git
+- GitHub
+- PyCharm
+- Firefox Developer Edition
+- Chrome
+
+### Currently Learning
+
+- Page Object Model (POM)
+- Advanced Selenium
+- Test Automation Architecture
+
+---
+
+# 📚 Repository Structure
 
 ```
+QA-Portfolio/
+
+├── STLC/
+│   ├── Requirement Analysis
+│   ├── Test Planning
+│   ├── Test Design
+│   ├── Test Execution
+│   └── Test Reporting
+│
+├── PyTest_Fundamentals/
+│   ├── README
+│   ├── Cheatsheet
+│   ├── Interview Questions
+│   └── Practical Exercises
+│
+├── XPath_Strategies/
+│   ├── README
+│   ├── Exercises
+│   ├── Best Practices
+│   ├── Cheatsheet
+│   └── Interview Questions
+│
+├── Selenium_Web_Automation/
+│   ├── AutomationExercise
+│   ├── SauceDemo
+│   ├── Browser Setup
+│   ├── Cheatsheet
+│   ├── Locator Guide
+│   ├── Wait Strategies
+│   └── Interview Questions
+│
+├── POM_GroceryMate/
+│
+└── .github/
+```
 
 ---
 
-## 🐞 Bug-Reports
+# 📖 QA Knowledge Base
 
-Alle gefundenen Fehler werden als **GitHub Issues** dokumentiert – mit Prioritäten, Umgebung und Reproduktionsschritten.
+The repository is organized into learning modules that combine theory with practical implementation.
 
-➡️ [Issues ansehen](https://github.com/uniquebughuntress/QA-Portfolio/issues)
+Each module contains structured documentation, practical exercises and reusable reference material.
+
+Depending on the topic, modules include:
+
+- README
+- Practical Exercises
+- Cheatsheets
+- Best Practices
+- Interview Questions
+- Working Python Code
+- Selenium Examples
+
+The goal is to create a long-term knowledge base that can be used for learning, revision and interview preparation.
 
 ---
 
-## 📫 Kontakt & Austausch
+# 🚀 Current Progress
 
-Feedback, Hinweise oder einfach nur ein fachlicher Austausch sind willkommen.  
-Du erreichst mich hier auf GitHub – oder über [dein bevorzugtes Medium, z. B. LinkedIn].
+## ✅ Software Testing (STLC)
+
+- Requirement Analysis
+- Test Planning
+- Test Case Design
+- Test Execution
+- Test Reporting
+- Equivalence Partitioning
+- Boundary Value Analysis
+- Decision Table Testing
+- State Transition Testing
 
 ---
 
-*Letzte Aktualisierung: 16.07.2026*  
-*– Always learning, always hunting bugs.*
+## ✅ PyTest Fundamentals
+
+- Assertions
+- Fixtures
+- Parametrization
+- Edge Cases
+- Exception Testing
+
+---
+
+## ✅ XPath Strategies
+
+- Relative XPath
+- XPath Functions
+- XPath Axes
+- Locator Strategies
+- Best Practices
+
+---
+
+## ✅ Selenium Web Automation
+
+- Selenium WebDriver
+- Browser Automation
+- Explicit Waits
+- Page Navigation
+- Form Automation
+- Registration Workflow
+- Stable Locator Strategies
+
+---
+
+## 🚧 Currently Working On
+
+**Page Object Model (POM)**
+
+Building a maintainable Selenium framework based on the Page Object Model design pattern.
+
+---
+
+# 🐞 Bug Reports
+
+Discovered issues are documented as GitHub Issues whenever appropriate, including:
+
+- Environment
+- Steps to Reproduce
+- Expected Result
+- Actual Result
+- Severity
+- Additional Notes
+
+➡️ **GitHub Issues**
+
+---
+
+# 💡 Philosophy
+
+> Quality is more than finding bugs.
+
+Good Quality Assurance means understanding requirements, asking the right questions, designing meaningful test cases, building maintainable automation and continuously improving software quality.
+
+This portfolio reflects that mindset.
+
+---
+
+# 🤝 Connect
+
+Feedback, suggestions and professional exchange are always welcome.
+
+- GitHub: **uniquebughuntress**
+- [![LinkedIn](https://img.shields.io/badge/LinkedIn-Natalya%20Schwarz-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/uniquebughuntress/)
+
+---
+
+# 📌 Repository Status
+
+This repository is continuously updated as I progress through my QA journey.
+
+New modules, projects and documentation are added regularly.
+
+---
+
+*"Always learning. Always improving. Always hunting bugs."* 🐞
