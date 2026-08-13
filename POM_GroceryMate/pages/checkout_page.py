@@ -14,10 +14,6 @@ from POM_GroceryMate.pages.base_page import BasePage
 class CheckoutPage(BasePage):
     """Page Object representing the checkout page."""
 
-    BASKET_ITEMS = (
-        By.CSS_SELECTOR,
-        ".checkout-card-item-container",
-    )
     PRODUCT_REMOVE = (
         By.CSS_SELECTOR,
         "a.remove-icon",
@@ -42,6 +38,62 @@ class CheckoutPage(BasePage):
         By.CSS_SELECTOR,
         ".free-shipment-message",
     )
+    STREET_INPUT = (
+        By.CSS_SELECTOR,
+        "input[name='street']",
+    )
+
+    CITY_INPUT = (
+        By.CSS_SELECTOR,
+        "input[name='city']",
+    )
+
+    POSTAL_CODE_INPUT = (
+        By.CSS_SELECTOR,
+        "input[name='postalCode']",
+    )
+
+    CARD_NUMBER_INPUT = (
+        By.CSS_SELECTOR,
+        "input[name='cardNumber']",
+    )
+
+    NAME_ON_CARD_INPUT = (
+        By.CSS_SELECTOR,
+        "input[name='nameOnCard']",
+    )
+
+    EXPIRATION_INPUT = (
+        By.CSS_SELECTOR,
+        "input[name='expiration']",
+    )
+
+    CVV_INPUT = (
+        By.CSS_SELECTOR,
+        "input[name='cvv']",
+    )
+
+    BASKET_ITEMS = (
+        By.CSS_SELECTOR,
+        ".basket-items-container > .d-flex > .checkout-card-item-container",
+    )
+
+    SHOP_NAV = (
+        By.XPATH,
+        "//ul[@class='anim-nav']//a[@href='/store']",
+    )
+
+    PRODUCT_ITEM_BY_NAME = (
+        By.XPATH,
+        "//div[contains(@class, 'checkout-card-item-container')]"
+        "[.//h5[contains(@class, 'checkout-product-title')"
+        " and normalize-space()='{product_name}']]",
+    )
+
+    PRODUCT_QUANTITY_PLUS = (
+        By.CSS_SELECTOR,
+        "button.plus",
+    )
 
     def get_product_count(self) -> int:
         """Return the number of products in the basket."""
@@ -62,9 +114,12 @@ class CheckoutPage(BasePage):
         """Return the displayed product total."""
         return self.get_text(self.PRODUCT_TOTAL)
 
-    def get_total(self) -> str:
-        """Return the displayed order total."""
-        return self.get_text(self.TOTAL)
+    def get_total(self) -> float:
+        """Return the order total as a float."""
+        text = self.get_text(self.TOTAL)
+        text = text.replace("€", "").strip()
+
+        return float(text) if text else 0.0
 
     def remove_product(self):
         """Remove the first product from the basket."""
@@ -93,3 +148,38 @@ class CheckoutPage(BasePage):
             self.FREE_SHIPMENT_MSG,
             timeout=3,
         )
+
+    def go_to_shop(self):
+        """Navigate back to the shop."""
+        self.click(self.SHOP_NAV)
+
+        from POM_GroceryMate.pages.store_page import StorePage
+
+        return StorePage(self.driver)
+
+    def increase_quantity(
+        self,
+        product_name: str,
+        times: int = 1,
+    ):
+        """Increase the quantity of a specific product."""
+        if times < 1:
+            raise ValueError("Times must be at least 1.")
+
+        item_locator = (
+            self.PRODUCT_ITEM_BY_NAME[0],
+            self.PRODUCT_ITEM_BY_NAME[1].format(
+                product_name=product_name,
+            ),
+        )
+
+        item = self.find_element(item_locator)
+
+        plus_button = item.find_element(
+            *self.PRODUCT_QUANTITY_PLUS,
+        )
+
+        for _ in range(times):
+            plus_button.click()
+
+        return self

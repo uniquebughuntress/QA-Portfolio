@@ -263,6 +263,11 @@ class HomePageLocators:
 
     # ====== NAVIGATION ======
 
+    CART_ICON = (
+        By.CSS_SELECTOR,
+        ".social-icon-cont .headerIcon:nth-child(3)",
+    )
+
     NAV_HOME = (
         By.XPATH,
         "//ul[@class='anim-nav']//a[text()='Home']",

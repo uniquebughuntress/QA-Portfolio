@@ -7,6 +7,7 @@
 """Page Object for the GroceryMate home page."""
 
 from POM_GroceryMate.pages.base_page import BasePage
+from POM_GroceryMate.pages.checkout_page import CheckoutPage
 from POM_GroceryMate.utils.constants import (
     HomePageLocators,
     URL_GROCERY_MATE,
@@ -45,3 +46,8 @@ class HomePage(BasePage):
         return self.is_element_visible(
             HomePageLocators.LOGO,
         )
+
+    def go_to_checkout(self):
+        """Navigate to the checkout page via the cart icon."""
+        self.click(HomePageLocators.CART_ICON)
+        return CheckoutPage(self.driver)

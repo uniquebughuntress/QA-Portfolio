@@ -15,6 +15,7 @@ from POM_GroceryMate.utils.constants import (
     URL_SHOP,
 )
 from POM_GroceryMate.utils.test_data import generate_birth_date
+from selenium.webdriver.common.keys import Keys
 
 
 class StorePage(BasePage):
@@ -78,35 +79,39 @@ class StorePage(BasePage):
         """Open a product through the store search."""
         return self.search_product(product_name)
 
-    def add_product_to_cart(
-        self,
-        product_name: str,
-        quantity: int = 1,
-    ):
-        """Add a product from the current grid to the cart."""
-        card_locator = (
-            StorePageLocators.PRODUCT_CARD_BY_NAME[0],
-            StorePageLocators.PRODUCT_CARD_BY_NAME[1].format(
-                product_name=product_name,
-            ),
-        )
-
-        card = self.find_element(card_locator)
-
-        quantity_input = card.find_element(
-            *StorePageLocators.PRODUCT_QUANTITY,
-        )
-
-        quantity_input.clear()
-        quantity_input.send_keys(str(quantity))
-
-        add_to_cart_button = card.find_element(
-            *StorePageLocators.PRODUCT_ADD_TO_CART,
-        )
-
-        add_to_cart_button.click()
-
-        return self
+    # def add_product_to_cart(
+    #     self,
+    #     product_name: str,
+    #     quantity: int = 1,
+    # ):
+    #     """Add a product from the current grid to the cart."""
+    #     if quantity < 1:
+    #         raise ValueError("Quantity must be at least 1.")
+    #
+    #     card_locator = (
+    #         StorePageLocators.PRODUCT_CARD_BY_NAME[0],
+    #         StorePageLocators.PRODUCT_CARD_BY_NAME[1].format(
+    #             product_name=product_name,
+    #         ),
+    #     )
+    #
+    #     card = self.find_element(card_locator)
+    #
+    #     quantity_input = card.find_element(
+    #         *StorePageLocators.PRODUCT_QUANTITY,
+    #     )
+    #
+    #     quantity_input.clear()
+    #     quantity_input.send_keys(str(quantity))
+    #     quantity_input.send_keys(Keys.TAB)
+    #
+    #     add_to_cart_button = card.find_element(
+    #         *StorePageLocators.PRODUCT_ADD_TO_CART,
+    #     )
+    #
+    #     add_to_cart_button.click()
+    #
+    #     return self
 
     def select_category(self, category_name: str):
         """Select a product category."""
@@ -118,5 +123,27 @@ class StorePage(BasePage):
         )
 
         self.click(category_locator)
+
+        return self
+
+    def add_product_to_cart(
+        self,
+        product_name: str,
+    ):
+        """Add one unit of a product from the current grid to the cart."""
+        card_locator = (
+            StorePageLocators.PRODUCT_CARD_BY_NAME[0],
+            StorePageLocators.PRODUCT_CARD_BY_NAME[1].format(
+                product_name=product_name,
+            ),
+        )
+
+        card = self.find_element(card_locator)
+
+        add_to_cart_button = card.find_element(
+            *StorePageLocators.PRODUCT_ADD_TO_CART,
+        )
+
+        add_to_cart_button.click()
 
         return self
