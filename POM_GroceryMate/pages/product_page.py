@@ -6,6 +6,8 @@
 
 """Page Object for the GroceryMate product detail page."""
 
+from selenium.webdriver.support.wait import WebDriverWait
+
 from POM_GroceryMate.pages.base_page import BasePage
 from POM_GroceryMate.utils.constants import (
     DEFAULT_TIMEOUT,
@@ -66,6 +68,19 @@ class ProductPage(BasePage):
         )
         return int(review_count.strip("()"))
 
+    def wait_for_review_count_change(self, previous_count: int) -> int:
+        """Wait until the product review count has changed."""
+        return WebDriverWait(
+            self.driver,
+            DEFAULT_TIMEOUT,
+        ).until(
+            lambda driver: (
+                self.get_review_count()
+                if self.get_review_count() != previous_count
+                else False
+            )
+        )
+
     def select_stars(self, count: int):
         """Select the requested number of review stars."""
         if not 1 <= count <= 5:
@@ -122,7 +137,7 @@ class ProductPage(BasePage):
             return self.get_text(
                 ProductPageLocators.FIRST_COMMENT_HEADER,
             )
-        except Exception:
+        except TimeoutException:
             return ""
 
     def get_first_text(self) -> str:
@@ -131,7 +146,7 @@ class ProductPage(BasePage):
             return self.get_text(
                 ProductPageLocators.FIRST_COMMENT_TEXT,
             )
-        except Exception:
+        except TimeoutException:
             return ""
 
     def get_first_rating(self) -> int:
