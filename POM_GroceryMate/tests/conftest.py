@@ -10,6 +10,7 @@ import pytest
 from selenium import webdriver
 
 from POM_GroceryMate.pages.login_page import LoginPage
+from POM_GroceryMate.pages.home_page import HomePage
 from POM_GroceryMate.utils.constants import (
     TEST_USER_1_EMAIL,
     TEST_USER_1_PASSWORD,
@@ -57,3 +58,15 @@ def logged_in_driver_test2(driver):
     )
 
     return driver
+
+
+@pytest.fixture
+def clean_cart(logged_in_driver):
+    """Empty the shopping cart after the test."""
+    yield logged_in_driver
+
+    home_page = HomePage(logged_in_driver)
+    checkout_page = home_page.go_to_checkout()
+
+    while checkout_page.get_product_count() > 0:
+        checkout_page.remove_first_product()
