@@ -5,6 +5,7 @@
 # Projekt: QA-Portfolio
 """Review tests for GroceryMate."""
 
+from POM_GroceryMate.pages import store_page
 from POM_GroceryMate.pages.home_page import HomePage
 
 
@@ -69,3 +70,32 @@ def test_delete_own_review(logged_in_driver):
     )
 
     assert deleted_count == initial_count
+
+
+def test_second_review_is_restricted(logged_in_driver):
+    """Verify that a user cannot review the same product twice."""
+    home_page = HomePage(logged_in_driver)
+    store_page = home_page.go_to_shop()
+
+    product_page = store_page.search_product("Loose Mango")
+
+    assert product_page.get_title() == "Loose Mango"
+    assert not product_page.is_review_ui_displayed()
+    assert product_page.is_restriction_displayed()
+    assert (
+        product_page.get_restriction_text() == "You have already reviewed this product."
+    )
+
+
+def test_second_review_is_restricted(logged_in_driver):
+    """Verify that a user cannot review the same product twice."""
+    home_page = HomePage(logged_in_driver)
+    store_page = home_page.go_to_shop()
+
+    product_page = store_page.search_product("Loose Mango")
+
+    assert product_page.get_title() == "Loose Mango"
+
+    print("Review UI:", product_page.is_review_ui_displayed())
+    print("Restriction:", product_page.is_restriction_displayed())
+    print("Restriction text:", product_page.get_restriction_text())
