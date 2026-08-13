@@ -6,13 +6,12 @@
 
 """Page Object for the GroceryMate product detail page."""
 
-from selenium.webdriver.common.by import By
-
 from POM_GroceryMate.pages.base_page import BasePage
 from POM_GroceryMate.utils.constants import (
     DEFAULT_TIMEOUT,
     ProductPageLocators,
 )
+from selenium.common.exceptions import TimeoutException
 
 
 class ProductPage(BasePage):
@@ -26,10 +25,8 @@ class ProductPage(BasePage):
     def get_title(self) -> str:
         """Return the product title."""
         try:
-            return self.get_text(
-                ProductPageLocators.PRODUCT_TITLE,
-            )
-        except Exception:
+            return self.get_text(ProductPageLocators.PRODUCT_TITLE)
+        except TimeoutException:
             return ""
 
     def add_to_cart(self):
@@ -62,12 +59,25 @@ class ProductPage(BasePage):
         except Exception:
             return ""
 
+    def get_review_count(self) -> int:
+        """Return the current number of product reviews."""
+        review_count = self.get_text(
+            ProductPageLocators.REVIEWS_COUNT,
+        )
+        return int(review_count.strip("()"))
+
     def select_stars(self, count: int):
         """Select the requested number of review stars."""
+        if not 1 <= count <= 5:
+            raise ValueError("Star rating must be between 1 and 5.")
+
         stars = self.find_elements(
             ProductPageLocators.REVIEW_STARS,
             timeout=DEFAULT_TIMEOUT,
         )
+
+        if len(stars) != 5:
+            raise RuntimeError("Expected five review stars.")
 
         for star in stars[:count]:
             star.click()

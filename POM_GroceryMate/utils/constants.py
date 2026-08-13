@@ -279,6 +279,28 @@ class HomePageLocators:
 class ProductPageLocators:
     """Locators for product details, age verification and reviews."""
 
+    # ==================== REVIEW UI ====================
+    REVIEW_STARS = (
+        By.CSS_SELECTOR,
+        "div.interactive-rating span.star",
+    )
+    REVIEW_TEXTAREA = (
+        By.CSS_SELECTOR,
+        "textarea.new-review-form-control",
+    )
+    REVIEW_SEND_BTN = (
+        By.CSS_SELECTOR,
+        "button.new-review-btn-send",
+    )
+    REVIEW_CHAR_COUNTER = (
+        By.CSS_SELECTOR,
+        ".new-review-char-counter span",
+    )
+    REVIEWS_COUNT = (
+        By.CSS_SELECTOR,
+        ".ratingContainer p.reviews",
+    )
+
     # ====== PRODUKTLISTE ======
 
     PRODUCT_GRID = (
