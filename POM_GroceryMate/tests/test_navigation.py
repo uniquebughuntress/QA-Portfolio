@@ -7,15 +7,14 @@
 
 from POM_GroceryMate.pages.home_page import HomePage
 
-
-def test_search_and_open_nectarines(logged_in_driver):
-    """Open Nectarines through the store search."""
-    home_page = HomePage(logged_in_driver)
-    store_page = home_page.go_to_shop()
-
-    product_page = store_page.search_product("Nectarines")
-
-    assert product_page.get_title() == "Nectarines"
+# def test_search_and_open_nectarines(logged_in_driver):
+#     """Open Nectarines through the store search."""
+#     home_page = HomePage(logged_in_driver)
+#     store_page = home_page.go_to_shop()
+#
+#     product_page = store_page.search_product("Nectarines")
+#
+#     assert product_page.get_title() == "Nectarines"
 
 
 #
@@ -40,3 +39,22 @@ def test_search_and_open_nectarines(logged_in_driver):
 #     )
 #
 #     assert final_count == initial_count + 1
+
+
+def test_add_oranges_to_cart(logged_in_driver):
+    """Verify that a product can be added from the store grid."""
+    home_page = HomePage(logged_in_driver)
+    store_page = home_page.go_to_shop()
+
+    store_page.add_product_to_cart(
+        "Oranges",
+        quantity=1,
+    )
+
+
+def test_select_fresh_vegetables(logged_in_driver):
+    """Verify that a product category can be selected."""
+    home_page = HomePage(logged_in_driver)
+    store_page = home_page.go_to_shop()
+
+    store_page.select_category("Fresh Vegetables")

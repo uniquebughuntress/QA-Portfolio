@@ -107,6 +107,22 @@ class StorePageLocators:
 
     PRODUCT_GRID = (By.CSS_SELECTOR, ".product-grid")
     PRODUCT_CARDS = (By.CSS_SELECTOR, ".product-card")
+    PRODUCT_CARD_BY_NAME = (
+        By.XPATH,
+        "//div[contains(@class, 'product-card')]"
+        "[.//p[contains(@class, 'lead') and "
+        "normalize-space()='{product_name}']]",
+    )
+
+    PRODUCT_QUANTITY = (
+        By.CSS_SELECTOR,
+        ".quantity",
+    )
+
+    PRODUCT_ADD_TO_CART = (
+        By.CSS_SELECTOR,
+        ".btn-cart",
+    )
 
     # ====== PRODUKTTITEL ======
 
@@ -158,6 +174,12 @@ class StorePageLocators:
     )
 
     # ====== KATEGORIEN ======
+
+    CATEGORY_BY_NAME = (
+        By.XPATH,
+        "//div[contains(@class, 'widget-menu')]"
+        "//li//a[normalize-space()='{category_name}']",
+    )
 
     CATEGORY_ALCOHOL = (
         By.XPATH,

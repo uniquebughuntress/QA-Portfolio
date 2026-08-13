@@ -77,3 +77,46 @@ class StorePage(BasePage):
     def click_product_by_name(self, product_name: str):
         """Open a product through the store search."""
         return self.search_product(product_name)
+
+    def add_product_to_cart(
+        self,
+        product_name: str,
+        quantity: int = 1,
+    ):
+        """Add a product from the current grid to the cart."""
+        card_locator = (
+            StorePageLocators.PRODUCT_CARD_BY_NAME[0],
+            StorePageLocators.PRODUCT_CARD_BY_NAME[1].format(
+                product_name=product_name,
+            ),
+        )
+
+        card = self.find_element(card_locator)
+
+        quantity_input = card.find_element(
+            *StorePageLocators.PRODUCT_QUANTITY,
+        )
+
+        quantity_input.clear()
+        quantity_input.send_keys(str(quantity))
+
+        add_to_cart_button = card.find_element(
+            *StorePageLocators.PRODUCT_ADD_TO_CART,
+        )
+
+        add_to_cart_button.click()
+
+        return self
+
+    def select_category(self, category_name: str):
+        """Select a product category."""
+        category_locator = (
+            StorePageLocators.CATEGORY_BY_NAME[0],
+            StorePageLocators.CATEGORY_BY_NAME[1].format(
+                category_name=category_name,
+            ),
+        )
+
+        self.click(category_locator)
+
+        return self
