@@ -147,3 +147,51 @@ class StorePage(BasePage):
         add_to_cart_button.click()
 
         return self
+
+    def is_age_verification_displayed(self) -> bool:
+        """Return whether the age verification modal is visible."""
+        return self.is_element_visible(
+            StorePageLocators.MODAL_OVERLAY,
+            timeout=3,
+        )
+
+    def enter_birth_date(self, birth_date: str):
+        """Enter the birth date into the age verification form."""
+        self.type_text(
+            StorePageLocators.MODAL_INPUT,
+            birth_date,
+        )
+        return self
+
+    def verify_age(self, birth_date: str):
+        """Submit the given birth date for age verification."""
+        self.type_text(
+            StorePageLocators.MODAL_INPUT,
+            birth_date,
+        )
+
+        self.click(
+            StorePageLocators.MODAL_CONFIRM_BTN,
+        )
+
+        return self
+
+    def is_success_toast_displayed(self) -> bool:
+        """Return whether the age verification success toast is visible."""
+        return self.is_element_visible(
+            StorePageLocators.SUCCESS_TOAST,
+            timeout=3,
+        )
+
+    def is_error_toast_displayed(self) -> bool:
+        """Return whether the age verification error toast is visible."""
+        return self.is_element_visible(
+            StorePageLocators.ERROR_TOAST,
+            timeout=3,
+        )
+
+    def get_toast_message(self) -> str:
+        """Return the visible age verification toast message."""
+        return self.get_text(
+            StorePageLocators.TOAST_MESSAGE,
+        )

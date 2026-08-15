@@ -19,21 +19,21 @@ class LoginPage(BasePage):
     def open(self, url: str = URL_LOGIN):
         """Open the login page."""
         return super().open(url)
-
+    
     def login(self, email: str, password: str):
         """Log in and return the Home Page."""
         self.type_text(
-            LoginPageLocators.EMAIL_INPUT,
-            email,
-        )
+                LoginPageLocators.EMAIL_INPUT,
+                email,
+                )
         self.type_text(
-            LoginPageLocators.PASSWORD_INPUT,
-            password,
-        )
+                LoginPageLocators.PASSWORD_INPUT,
+                password,
+                )
         self.click(LoginPageLocators.SUBMIT_BTN)
-
+        
         from POM_GroceryMate.pages.home_page import HomePage
-
+        
         return HomePage(self.driver)
 
     def get_error_message(self) -> str:

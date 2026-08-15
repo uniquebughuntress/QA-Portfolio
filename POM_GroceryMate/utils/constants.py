@@ -186,7 +186,7 @@ class StorePageLocators:
         "//div[@class='widget-menu']//li//a[text()='Alocohol']",
     )
 
-    # ====== PAGINATION ======
+    # ====== PAGINATION & AGE VERIFICATION ======
 
     NEXT_PAGE_BTN = (
         By.XPATH,
@@ -231,6 +231,29 @@ class StorePageLocators:
     MODAL_TEXT = (
         By.CSS_SELECTOR,
         ".modal-content p",
+    )
+
+    # ====== AGE VERIFICATION TOASTS ======
+
+    # ====== AGE VERIFICATION TOASTS ======
+
+    SUCCESS_TOAST = (
+        By.XPATH,
+        "//div[@role='status' and "
+        "@aria-live='polite' and "
+        "contains(normalize-space(), 'You are of age.')]",
+    )
+
+    ERROR_TOAST = (
+        By.XPATH,
+        "//div[@role='status' and "
+        "@aria-live='polite' and "
+        "contains(normalize-space(), 'You are underage.')]",
+    )
+
+    TOAST_MESSAGE = (
+        By.CSS_SELECTOR,
+        "div[role='status'][aria-live='polite']",
     )
 
 

@@ -61,3 +61,22 @@ def generate_birth_date(days_offset: int = 0) -> str:
     birth_date = eighteenth_birthday - timedelta(days=days_offset)
 
     return birth_date.strftime("%d-%m-%Y")
+
+
+from datetime import date, timedelta
+
+
+def get_age_verification_dates() -> tuple[str, str]:
+    """Return dates for exactly 18 and 17 years + 364 days."""
+    today = date.today()
+
+    eighteenth_birthday = today.replace(
+        year=today.year - 18,
+    )
+
+    underage_boundary = eighteenth_birthday + timedelta(days=1)
+
+    return (
+        eighteenth_birthday.strftime("%d-%m-%Y"),
+        underage_boundary.strftime("%d-%m-%Y"),
+    )
