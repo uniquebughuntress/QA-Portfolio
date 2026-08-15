@@ -51,7 +51,7 @@ QA-Portfolio/
 
 ✅ Selenium Web Automation
 
-🚧 Page Object Model (POM)
+✅ Page Object Model (POM)
 
 ---
 
