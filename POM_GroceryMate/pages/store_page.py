@@ -79,40 +79,6 @@ class StorePage(BasePage):
         """Open a product through the store search."""
         return self.search_product(product_name)
 
-    # def add_product_to_cart(
-    #     self,
-    #     product_name: str,
-    #     quantity: int = 1,
-    # ):
-    #     """Add a product from the current grid to the cart."""
-    #     if quantity < 1:
-    #         raise ValueError("Quantity must be at least 1.")
-    #
-    #     card_locator = (
-    #         StorePageLocators.PRODUCT_CARD_BY_NAME[0],
-    #         StorePageLocators.PRODUCT_CARD_BY_NAME[1].format(
-    #             product_name=product_name,
-    #         ),
-    #     )
-    #
-    #     card = self.find_element(card_locator)
-    #
-    #     quantity_input = card.find_element(
-    #         *StorePageLocators.PRODUCT_QUANTITY,
-    #     )
-    #
-    #     quantity_input.clear()
-    #     quantity_input.send_keys(str(quantity))
-    #     quantity_input.send_keys(Keys.TAB)
-    #
-    #     add_to_cart_button = card.find_element(
-    #         *StorePageLocators.PRODUCT_ADD_TO_CART,
-    #     )
-    #
-    #     add_to_cart_button.click()
-    #
-    #     return self
-
     def select_category(self, category_name: str):
         """Select a product category."""
         category_locator = (

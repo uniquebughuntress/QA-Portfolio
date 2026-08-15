@@ -6,7 +6,6 @@
 
 """Reusable test-data generators."""
 
-from datetime import date, timedelta
 import uuid
 
 from faker import Faker

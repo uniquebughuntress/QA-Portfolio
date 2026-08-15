@@ -7,8 +7,6 @@
 
 from POM_GroceryMate.pages import store_page
 from POM_GroceryMate.pages.home_page import HomePage
-from POM_GroceryMate.utils.constants import ProductPageLocators
-import time
 
 
 def test_create_star_only_review(logged_in_driver):
@@ -79,28 +77,27 @@ def test_review_restriction_after_creation(logged_in_driver):
     home_page = HomePage(logged_in_driver)
     store_page = home_page.go_to_shop()
 
-    product_page = store_page.search_product("Cherries")
-
-    print("\n=== REVIEW RESTRICTION CHECK ===")
-    print("Product:", product_page.get_title())
-    print(
-        "Review UI before:",
-        product_page.is_review_ui_displayed(),
-    )
+    product_page = store_page.search_product("Nectarines")
 
     initial_count = product_page.get_review_count()
-    print("Initial review count:", initial_count)
 
-    product_page.select_stars(3)
-    product_page.send_review()
+    try:
+        product_page.select_stars(3)
+        product_page.send_review()
 
-    final_count = product_page.wait_for_review_count_change(
-        initial_count,
-    )
+        final_count = product_page.wait_for_review_count_change(
+            initial_count,
+        )
 
-    assert final_count == initial_count + 1
-    assert not product_page.is_review_ui_displayed()
-    assert product_page.is_restriction_displayed()
-    assert (
-        product_page.get_restriction_text() == "You have already reviewed this product."
-    )
+        assert final_count == initial_count + 1
+        assert not product_page.is_review_ui_displayed()
+        assert product_page.is_restriction_displayed()
+        assert (
+            product_page.get_restriction_text()
+            == "You have already reviewed this product."
+        )
+
+    finally:
+        product_page.open_menu()
+        product_page.click_delete()
+        assert product_page.accept_alert()
